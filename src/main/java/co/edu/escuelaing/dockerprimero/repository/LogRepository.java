@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface LogRepository extends MongoRepository<LogMessage, String> {
-    List<LogMessage> findTop10ByOrderByTimestampDesc();
+    List<LogMessage> findTop10ByOrderByDateCreatedDesc();
 
 }

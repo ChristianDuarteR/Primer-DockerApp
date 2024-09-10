@@ -1,22 +1,14 @@
-version: '3.1'
+version: '5'
 services:
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: web
-    ports:
-      - "8087:6000"
-
   mongodb:
     image: mongo:latest
-    container_name: mongodb
+    container_name: "mongodb"
     ports:
       - "27017:27017"
-    volumes:
-      - mongodb:/data/db
-      - mongodb_config:/data/configdb
-
-volumes:
-  mongodb:
-  mongodb_config:
+  springdockercompose:
+    image: springdockercompose:latest
+    container_name: springdockercompose
+    ports:
+      - "8087:6000"
+    links:
+      - mongodb

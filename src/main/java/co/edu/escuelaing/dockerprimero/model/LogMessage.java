@@ -17,12 +17,12 @@ public class LogMessage {
 
     private String message;
 
-    private Date timestamp;
+    private Date dateCreated;
 
     public LogMessage(String message) {
-        this.id = String.valueOf( new Random().nextInt());
+        this.id = String.valueOf(new Random().nextInt(Integer.MAX_VALUE));
         this.message = message;
-        this.timestamp = new Date();
+        this.dateCreated = new Date();
     }
 
 }

@@ -21,7 +21,7 @@ public class HelloController {
     public ResponseEntity<List<LogMessage>> addMessageAndGetLatest(@RequestBody String message) {
         LogMessage logMessage = new LogMessage(message);
         logService.save(logMessage);
-        List<LogMessage> latestMessages = logService.findTop10ByOrderByTimestampDesc();
+        List<LogMessage> latestMessages = logService.findTop10ByOrderByDateCreatedDesc();
 
         return ResponseEntity.ok(latestMessages);
     }

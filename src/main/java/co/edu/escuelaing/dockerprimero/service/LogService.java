@@ -17,7 +17,7 @@ public class LogService {
         logRepository.save(logMessage);
     }
 
-    public List<LogMessage> findTop10ByOrderByTimestampDesc () {
-       return logRepository.findTop10ByOrderByTimestampDesc();
+    public List<LogMessage> findTop10ByOrderByDateCreatedDesc () {
+       return logRepository.findTop10ByOrderByDateCreatedDesc();
     }
 }
