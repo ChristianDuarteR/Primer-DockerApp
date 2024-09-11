@@ -1,4 +1,4 @@
-version: '5'
+version: '3.8'
 services:
   mongodb:
     image: mongo:latest
@@ -9,6 +9,30 @@ services:
     image: springdockercompose:latest
     container_name: springdockercompose
     ports:
-      - "8087:6000"
+      - "35001:6000"
     links:
       - mongodb
+
+  springdockercompose1:
+    image: springdockercompose:latest
+    container_name: springdockercompose1
+    ports:
+      - "35002:6000"
+    links:
+      - mongodb
+  springdockercompose2:
+    image: springdockercompose:latest
+    container_name: springdockercompose2
+    ports:
+      - "35003:6000"
+    links:
+      - mongodb
+  clientroundrobin:
+    image: springroundrobin:latest
+    container_name: clientroundrobin
+    ports:
+      - "8080:6000"
+    depends_on:
+      - springdockercompose
+      - springdockercompose1
+      - springdockercompose2
