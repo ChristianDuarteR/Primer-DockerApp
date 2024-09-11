@@ -21,10 +21,6 @@ Sigue estos pasos para configurar el entorno de desarrollo:
 
    Abre una terminal y clona el repositorio con el siguiente comando:
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
-
-2. Clona el repositorio con el comando:
-
    git clone https://github.com/ChristianDuarteR/Primer-DockerApp.git
 
 3. Abre el proyecto en tu idl favorito
